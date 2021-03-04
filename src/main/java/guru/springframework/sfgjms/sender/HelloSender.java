@@ -20,13 +20,13 @@ public class HelloSender {
     public void sendMessage() {
 
         System.out.println("I'm sending an automated mesage");
-        HelloWorldMessage message = HelloWorldMessage
+        HelloWorldMessage helloWorldMessage = HelloWorldMessage
                 .builder()
                 .id(UUID.randomUUID())
                 .message("Hello World!")
                 .build();
 
-        jmsTemplate.convertAndSend(JmsConfig.MY_QUEUE, message);
+        jmsTemplate.convertAndSend(JmsConfig.MY_QUEUE, helloWorldMessage);
 
         System.out.println("Message Sent!");
     }
